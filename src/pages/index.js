@@ -1,34 +1,24 @@
-import Head from 'next/head'
-import { Inter } from '@next/font/google'
-import styles from '@/styles/Home.module.css'
-
-const inter = Inter({ subsets: ['latin'] })
+import Head from 'next/head';
+import Layout, { siteTitle } from '../../components/layout';
+import utilStyles from '../styles/utils.module.css';
+import { clsx } from 'clsx';
 
 export default function Home() {
   return (
-    <>
-      <div className={styles.container}>
+    <Layout home>
       <Head>
-        <title>SODIG</title>
-        <meta name="description" content="Home Page" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.ico" />
+        <title>{siteTitle}</title>
       </Head>
-      <main className={styles.main}>
-        
-          
-          <h1 className={styles.title}>
-            Ir a <a href="/about">About</a>
-          </h1>
-          
-          <p className={styles.description}>
-            Get started by editing{' '};
-            <code className={styles.code}>src/pages/index.js</code>
-          </p>
-         
-        
+      <section className={utilStyles.headingMd}>
+        <a href="/first-post">Ir a First post</a>
+        <p>[Your Self Introduction]</p>
+        <p>
+          (This is a sample website - you’ll be building a site like this on{' '}
+          <a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
+        </p>
 
-      </main> </div>
-    </>
-  )
+       
+      </section>
+    </Layout>
+  );
 }
